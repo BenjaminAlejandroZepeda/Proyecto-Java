@@ -14,6 +14,7 @@ public class Ingreso extends javax.swing.JFrame {
      * Creates new form Ingreso
      */
     public Ingreso() {
+        setTitle("MotorSports");
         initComponents();
     }
 
@@ -45,7 +46,7 @@ public class Ingreso extends javax.swing.JFrame {
 
         vrrvrv.setForeground(new java.awt.Color(255, 255, 255));
         vrrvrv.setText("Contraseña:");
-        jPanel1.add(vrrvrv, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, -1, -1));
+        jPanel1.add(vrrvrv, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, -1, -1));
 
         jButton2.setText("volver");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -57,14 +58,17 @@ public class Ingreso extends javax.swing.JFrame {
 
         vrtevr.setForeground(new java.awt.Color(255, 255, 255));
         vrtevr.setText("Correo:");
-        jPanel1.add(vrtevr, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 50, -1));
-
-        PassText.setText("jPasswordFielununund1");
-        jPanel1.add(PassText, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 110, -1));
-        jPanel1.add(Correo2Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 110, -1));
+        jPanel1.add(vrtevr, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 50, -1));
+        jPanel1.add(PassText, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 110, -1));
+        jPanel1.add(Correo2Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 110, -1));
 
         jButton1.setText("Iniciar sesión");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, -1, -1));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ntytvnv.JPG"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -88,6 +92,20 @@ public class Ingreso extends javax.swing.JFrame {
         ventana.setVisible(true);
         this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+            
+        if (PassText.getText().equals("ADMIN") || Correo2Text.getText().equals("ADMIN")){
+        
+        
+        }
+        
+        ListaV ventana = new ListaV();
+        ventana.setVisible(true);
+        this.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

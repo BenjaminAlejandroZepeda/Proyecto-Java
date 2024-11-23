@@ -14,18 +14,17 @@ public class Vehiculo {
     private int capacidad;
     private double precio;
     private int kilometrosHora;
-    private String imagenUrl;
 
     public Vehiculo() {
     }
 
-    public Vehiculo(String marca, String modelo, int capacidad, double precio, int kilometrosHora, String imagenUrl) {
+    public Vehiculo(String marca, String modelo, int capacidad, double precio, int kilometrosHora) {
         this.marca = marca;
         this.modelo = modelo;
         this.capacidad = capacidad;
         this.precio = precio;
         this.kilometrosHora = kilometrosHora;
-        this.imagenUrl = imagenUrl;
+       
     }
 
     public String getMarca() {
@@ -68,15 +67,6 @@ public class Vehiculo {
         this.kilometrosHora = kilometrosHora;
     }
 
-    public String getImagenUrl() {
-        return imagenUrl;
-    }
-
-    public void setImagenUrl(String imagenUrl) {
-        this.imagenUrl = imagenUrl;
-    }
-    
-    
-    
-    
+ 
+      
 }

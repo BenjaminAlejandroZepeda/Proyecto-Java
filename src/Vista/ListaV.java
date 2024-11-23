@@ -4,6 +4,10 @@
  */
 package Vista;
 
+import Controlador.JpanelImage;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author benja
@@ -14,6 +18,7 @@ public class ListaV extends javax.swing.JFrame {
      * Creates new form ListaV
      */
     public ListaV() {
+        setTitle("MotorSports");
         initComponents();
     }
 
@@ -26,21 +31,265 @@ public class ListaV extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jPanel1 = new javax.swing.JPanel();
+        Pantalla = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
+        PrecioText = new javax.swing.JLabel();
+        ModeloText = new javax.swing.JLabel();
+        chhec = new javax.swing.JLabel();
+        MarcaText = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        EstadoText = new javax.swing.JLabel();
+        KmText = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        CapacidadText = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+
+        jCheckBox1.setText("jCheckBox1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        javax.swing.GroupLayout PantallaLayout = new javax.swing.GroupLayout(Pantalla);
+        Pantalla.setLayout(PantallaLayout);
+        PantallaLayout.setHorizontalGroup(
+            PantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        PantallaLayout.setVerticalGroup(
+            PantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(Pantalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 280, 140));
+
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Marca:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 310, 40, -1));
+
+        jButton2.setText("2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 30, -1));
+
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Modelo:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, -1, 20));
+
+        jButton10.setText("Comprar");
+        jPanel1.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, -1, -1));
+
+        PrecioText.setForeground(new java.awt.Color(0, 0, 0));
+        PrecioText.setText("----------");
+        jPanel1.add(PrecioText, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 280, -1, -1));
+
+        ModeloText.setForeground(new java.awt.Color(0, 0, 0));
+        ModeloText.setText("----------");
+        jPanel1.add(ModeloText, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 340, -1, -1));
+
+        chhec.setForeground(new java.awt.Color(0, 0, 0));
+        chhec.setText("Precio:");
+        jPanel1.add(chhec, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, -1, -1));
+
+        MarcaText.setForeground(new java.awt.Color(0, 0, 0));
+        MarcaText.setText("----------");
+        jPanel1.add(MarcaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 310, -1, -1));
+
+        jButton3.setText("3");
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 30, -1));
+
+        EstadoText.setForeground(new java.awt.Color(0, 0, 0));
+        EstadoText.setText("----------");
+        jPanel1.add(EstadoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 370, -1, -1));
+
+        KmText.setForeground(new java.awt.Color(0, 0, 0));
+        KmText.setText("----------");
+        jPanel1.add(KmText, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 280, -1, -1));
+
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Km/H:");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 280, -1, -1));
+
+        CapacidadText.setForeground(new java.awt.Color(0, 0, 0));
+        CapacidadText.setText("----------");
+        jPanel1.add(CapacidadText, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, -1, -1));
+
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Estado:");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, -1, -1));
+
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Capacidad:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 310, -1, -1));
+
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("1");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 50, 40));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/diseno-fondo-abstracto-hd-color-verde-oliva_851755-74064.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 180, 40));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/diseno-fondo-abstracto-hd-color-verde-oliva_851755-74064.png"))); // NOI18N
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 280, 340));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/diseno-fondo-abstracto-hd-color-verde-oliva_851755-74064.png"))); // NOI18N
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, 190, 100));
+
+        jButton1.setText("Cerrar");
+        jButton1.setActionCommand("");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jButton4.setText("Ver");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+
+        jButton5.setText("Ver");
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
+
+        jButton6.setText("Ver");
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
+
+        jButton7.setText("Ver");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, -1, -1));
+
+        jButton8.setText("Ver");
+        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, -1, -1));
+
+        jButton9.setText("Ver");
+        jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, -1, -1));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Autos/gta-mag-Krieger-762810 (1).jpg"))); // NOI18N
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 190, 100));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/diseno-fondo-abstracto-hd-color-verde-oliva_851755-74064.png"))); // NOI18N
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 190, 100));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Autos/gta-mag-benefactor-br8-gtao-223952 (1).jpg"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 190, 100));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Legendary_Motorsport_Actual-_1_.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, 80));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/diseno-fondo-abstracto-hd-color-verde-oliva_851755-74064.png"))); // NOI18N
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 190, 100));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/diseno-fondo-abstracto-hd-color-verde-oliva_851755-74064.png"))); // NOI18N
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 100));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/negro1200(1).JPG"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 510));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 775, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        VentanaPrincipal ventana = new VentanaPrincipal();
+        ventana.setVisible(true);
+        this.setVisible(false);
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        
+        //Icon miIcono = new ImageIcon( new ImageIcon(getClass().getResource("/Imagenes/gta-mag-benefactor-br8-gtao-223952.jpg")).getImage().getScaledInstance(Pantalla.getWidth(), Pantalla.getHeight(), 0));
+
+        Pantalla.removeAll();
+        
+        JpanelImage miImagen = new JpanelImage(Pantalla, "/Imagenes/gta-mag-benefactor-br8-gtao-223952.jpg");
+        Pantalla.add(miImagen).repaint();
+        
+        PrecioText.setText("2.000.000");
+        KmText.setText("162.5");
+        CapacidadText.setText("4");
+        EstadoText.setText("Disponible");
+        MarcaText.setText("Benefactor");
+        ModeloText.setText("Benefactor BR8");
+        
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+      
+        Pantalla.removeAll();
+        
+        
+        JpanelImage miImagen = new JpanelImage(Pantalla, "/Imagenes/gta-mag-Krieger-762810.jpg");
+        Pantalla.add(miImagen).repaint();
+        
+        PrecioText.setText("2.875.000");
+        KmText.setText("180.5");
+        CapacidadText.setText("2");
+        EstadoText.setText("Disponible");
+        MarcaText.setText("Benefactor");
+        ModeloText.setText("Benefactor Krieger ");
+
+
+        Pantalla.revalidate();
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -48,5 +297,42 @@ public class ListaV extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CapacidadText;
+    private javax.swing.JLabel EstadoText;
+    private javax.swing.JLabel KmText;
+    private javax.swing.JLabel MarcaText;
+    private javax.swing.JLabel ModeloText;
+    private javax.swing.JPanel Pantalla;
+    private javax.swing.JLabel PrecioText;
+    private javax.swing.JLabel chhec;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
