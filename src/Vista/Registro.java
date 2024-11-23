@@ -1,8 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Vista;
+
+import Controlador.GuardarDatos;
+import Controlador.VerificarCorreo;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,8 +38,8 @@ public class Registro extends javax.swing.JFrame {
         NombreText = new javax.swing.JTextField();
         CorreoText = new javax.swing.JTextField();
         ApellidoText = new javax.swing.JTextField();
-        ContrText = new javax.swing.JTextField();
         FonoText = new javax.swing.JTextField();
+        ContrText = new javax.swing.JPasswordField();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -49,37 +50,37 @@ public class Registro extends javax.swing.JFrame {
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nombre:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Legendary_Motorsport_Actual-_1_.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 250, 90));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Apellido:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, -1, -1));
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Telefono:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, -1, -1));
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Correo:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, -1, -1));
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Contraseña:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, -1, -1));
-        jPanel1.add(NombreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 100, -1));
-        jPanel1.add(CorreoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 110, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, -1, -1));
+        jPanel1.add(NombreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 140, -1));
+        jPanel1.add(CorreoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 140, -1));
 
         ApellidoText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ApellidoTextActionPerformed(evt);
             }
         });
-        jPanel1.add(ApellidoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 110, -1));
-        jPanel1.add(ContrText, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 100, -1));
-        jPanel1.add(FonoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 100, -1));
+        jPanel1.add(ApellidoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 140, -1));
+        jPanel1.add(FonoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 140, -1));
+        jPanel1.add(ContrText, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 140, -1));
 
         jButton2.setText("Volver");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -89,6 +90,7 @@ public class Registro extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Registrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,17 +130,56 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        String nombre = NombreText.getText(); 
+        String apellido = ApellidoText.getText();
+        String telefono = FonoText.getText();
+        String correo = CorreoText.getText();
+        String contrasenia = ContrText.getText();
         
+    // Validación de campos vacíos
+       
+    if (nombre.isEmpty() || apellido.isEmpty() || telefono.isEmpty() || correo.isEmpty() || contrasenia.isEmpty()) 
+    { 
+        JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios."); return; 
+    }
 
-
-
-
-
-
-
-
-        // TODO add your handling code here:
+    // Validación de longitud de caracteres 
+    
+    if (nombre.length() > 50 || apellido.length() > 50 || contrasenia.length() > 50) 
+    {
+        JOptionPane.showMessageDialog(this, "Nombre, apellido y contraseña no pueden exceder los 50 caracteres."); return; 
+    }
+    
+    if (telefono.length() > 20) 
+    {
+        JOptionPane.showMessageDialog(this, "El número de teléfono no puede exceder los 20 caracteres."); return;
+    } 
+    
+    if (correo.length() > 255) 
+    {
+        JOptionPane.showMessageDialog(this, "El correo electrónico no puede exceder los 255 caracteres."); return; 
+    }
+    
+    if (!correo.contains("@")) 
+    { 
+        JOptionPane.showMessageDialog(this, "El correo electrónico debe contener '@'."); return; 
+    }
+    
+    if (VerificarCorreo.correoExiste(correo)) 
+    {
+        JOptionPane.showMessageDialog(this, "El correo ya está registrado. Por favor, use otro correo."); return; 
+    }
+    //Guardar los datos
+    GuardarDatos.guardarUsuario(nombre, apellido, telefono, correo, contrasenia); 
+    //vaciar las cajas
+    NombreText.setText("");
+    ApellidoText.setText("");
+    CorreoText.setText("");
+    FonoText.setText("");
+    ContrText.setText("");
+    JOptionPane.showMessageDialog(this, "Usuario registrado exitosamente.");
+    
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -148,7 +189,7 @@ public class Registro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ApellidoText;
-    private javax.swing.JTextField ContrText;
+    private javax.swing.JPasswordField ContrText;
     private javax.swing.JTextField CorreoText;
     private javax.swing.JTextField FonoText;
     private javax.swing.JTextField NombreText;

@@ -5,14 +5,34 @@
 package Vista;
 
 import Controlador.JpanelImage;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import Controlador.VehiculoDatos;
+import Modelo.Vehiculo;
+import java.awt.Label;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author benja
  */
 public class ListaV extends javax.swing.JFrame {
+
+ String datoX = "Disponible";
+    
+private void mostrarDatosVehiculo(int idVehiculo) {
+    Vehiculo vehiculo = VehiculoDatos.obtenerVehiculoPorId(idVehiculo);
+    
+    if (vehiculo != null) {
+        PrecioText.setText(String.valueOf(vehiculo.getPrecio()));
+        KmText.setText(String.valueOf(vehiculo.getKilometrosHora()));
+        CapacidadText.setText(String.valueOf(vehiculo.getCapacidad()));
+        MarcaText.setText(vehiculo.getMarca());
+        ModeloText.setText(vehiculo.getModelo());
+        EstadoText.setText("Disponible"); // Actualizar a "Disponible"
+    } else {
+        JOptionPane.showMessageDialog(this, "El vehículo con ID " + idVehiculo + " no fue encontrado.");
+        EstadoText.setText("No disponible"); // Actualizar a "No disponible"
+    }
+}
 
     /**
      * Creates new form ListaV
@@ -45,6 +65,7 @@ public class ListaV extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         EstadoText = new javax.swing.JLabel();
         KmText = new javax.swing.JLabel();
+        jButton11 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         CapacidadText = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -104,7 +125,13 @@ public class ListaV extends javax.swing.JFrame {
         jLabel6.setText("Modelo:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, -1, 20));
 
+        jButton10.setForeground(new java.awt.Color(0, 0, 0));
         jButton10.setText("Comprar");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, -1, -1));
 
         PrecioText.setForeground(new java.awt.Color(0, 0, 0));
@@ -133,6 +160,10 @@ public class ListaV extends javax.swing.JFrame {
         KmText.setForeground(new java.awt.Color(0, 0, 0));
         KmText.setText("----------");
         jPanel1.add(KmText, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 280, -1, -1));
+
+        jButton11.setForeground(new java.awt.Color(0, 0, 0));
+        jButton11.setText("Ver Compras");
+        jPanel1.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, -1, -1));
 
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Km/H:");
@@ -163,6 +194,7 @@ public class ListaV extends javax.swing.JFrame {
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/diseno-fondo-abstracto-hd-color-verde-oliva_851755-74064.png"))); // NOI18N
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, 190, 100));
 
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Cerrar");
         jButton1.setActionCommand("");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -172,6 +204,7 @@ public class ListaV extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jButton4.setForeground(new java.awt.Color(0, 0, 0));
         jButton4.setText("Ver");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,12 +213,19 @@ public class ListaV extends javax.swing.JFrame {
         });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
+        jButton5.setForeground(new java.awt.Color(0, 0, 0));
         jButton5.setText("Ver");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
 
         jButton6.setText("Ver");
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
 
+        jButton7.setForeground(new java.awt.Color(0, 0, 0));
         jButton7.setText("Ver");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,49 +291,51 @@ public class ListaV extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
+
+    
         //Icon miIcono = new ImageIcon( new ImageIcon(getClass().getResource("/Imagenes/gta-mag-benefactor-br8-gtao-223952.jpg")).getImage().getScaledInstance(Pantalla.getWidth(), Pantalla.getHeight(), 0));
 
-        Pantalla.removeAll();
-        
+        Pantalla.removeAll();  
         JpanelImage miImagen = new JpanelImage(Pantalla, "/Imagenes/gta-mag-benefactor-br8-gtao-223952.jpg");
         Pantalla.add(miImagen).repaint();
         
-        PrecioText.setText("2.000.000");
-        KmText.setText("162.5");
-        CapacidadText.setText("4");
-        EstadoText.setText("Disponible");
-        MarcaText.setText("Benefactor");
-        ModeloText.setText("Benefactor BR8");
-        
-        
+        mostrarDatosVehiculo(1);   
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
       
         Pantalla.removeAll();
-        
-        
         JpanelImage miImagen = new JpanelImage(Pantalla, "/Imagenes/gta-mag-Krieger-762810.jpg");
         Pantalla.add(miImagen).repaint();
-        
-        PrecioText.setText("2.875.000");
-        KmText.setText("180.5");
-        CapacidadText.setText("2");
-        EstadoText.setText("Disponible");
-        MarcaText.setText("Benefactor");
-        ModeloText.setText("Benefactor Krieger ");
-
-
-        Pantalla.revalidate();
+        mostrarDatosVehiculo(2);
 
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+
+         mostrarDatosVehiculo(3);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+
+         if (datoX.equals(EstadoText.getText()))
+            {
+                RegistrarVenta ventana = new RegistrarVenta();     
+                ventana.dato(ModeloText.getText(), PrecioText.getText());
+                ventana.setVisible(true);
+                this.setVisible(false); 
+            }
+         
+         else 
+         {
+            JOptionPane.showMessageDialog(this, "El estado actual no permite la operación.");
+         }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -307,6 +349,7 @@ public class ListaV extends javax.swing.JFrame {
     private javax.swing.JLabel chhec;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
