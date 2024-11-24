@@ -234,7 +234,13 @@ private void mostrarDatosVehiculo(int idVehiculo) {
         });
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, -1, -1));
 
+        jButton8.setForeground(new java.awt.Color(0, 0, 0));
         jButton8.setText("Ver");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, -1, -1));
 
         jButton9.setText("Ver");
@@ -243,7 +249,7 @@ private void mostrarDatosVehiculo(int idVehiculo) {
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Autos/gta-mag-Krieger-762810 (1).jpg"))); // NOI18N
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 190, 100));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/diseno-fondo-abstracto-hd-color-verde-oliva_851755-74064.png"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Autos/gta-mag-overflod-entity-xxr-gtao-762500 (1).jpg"))); // NOI18N
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 190, 100));
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, -1, -1));
 
@@ -256,7 +262,7 @@ private void mostrarDatosVehiculo(int idVehiculo) {
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/diseno-fondo-abstracto-hd-color-verde-oliva_851755-74064.png"))); // NOI18N
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 190, 100));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/diseno-fondo-abstracto-hd-color-verde-oliva_851755-74064.png"))); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Autos/gta-mag-X80Proto-934566 (1).jpg"))); // NOI18N
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 100));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/negro1200(1).JPG"))); // NOI18N
@@ -316,7 +322,11 @@ private void mostrarDatosVehiculo(int idVehiculo) {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 
 
-         mostrarDatosVehiculo(3);
+        Pantalla.removeAll();  
+        JpanelImage miImagen = new JpanelImage(Pantalla, "/Imagenes/gta-mag-X80Proto-934566.jpg");
+        Pantalla.add(miImagen).repaint();
+        
+        mostrarDatosVehiculo(3);   
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -335,6 +345,16 @@ private void mostrarDatosVehiculo(int idVehiculo) {
             JOptionPane.showMessageDialog(this, "El estado actual no permite la operación.");
          }
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        Pantalla.removeAll();  
+        JpanelImage miImagen = new JpanelImage(Pantalla, "/Imagenes/gta-mag-overflod-entity-xxr-gtao-762500.jpg");
+        Pantalla.add(miImagen).repaint();
+
+        mostrarDatosVehiculo(4);   
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
 
 
 

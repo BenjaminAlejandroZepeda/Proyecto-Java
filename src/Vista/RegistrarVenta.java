@@ -3,7 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-import Vista.ListaV;
+import static Controlador.Obtener_idUsuario.obtenerIdUsuarioPorCorreo;
+import static Controlador.Obtener_idvehiculo.obtenerIdVehiculoPorModelo;
+import Controlador.VentaGuardar;
+import static Controlador.VerificarCorreo.correoExiste;
 import javax.swing.JLabel;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
@@ -29,8 +32,8 @@ public class RegistrarVenta extends javax.swing.JFrame {
     }
    
  public void dato(String dato, String precio){
-    this.dato = dato;
-    this.precio = precio;
+        this.dato = dato;
+        this.precio = precio;
         ModeloVentaText.setText(dato);
         PrecioVentaText.setText(precio);
     }
@@ -53,6 +56,8 @@ public class RegistrarVenta extends javax.swing.JFrame {
         Condiciones = new javax.swing.JCheckBox();
         ModeloVentaText = new javax.swing.JLabel();
         FechaVenta = new javax.swing.JLabel();
+        ConfCorreo = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -112,6 +117,11 @@ public class RegistrarVenta extends javax.swing.JFrame {
         FechaVenta.setForeground(new java.awt.Color(0, 0, 0));
         FechaVenta.setText("--------");
         jPanel1.add(FechaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, -1, -1));
+        jPanel1.add(ConfCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 130, -1));
+
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Correo:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
 
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Forma de pago:");
@@ -147,29 +157,39 @@ public class RegistrarVenta extends javax.swing.JFrame {
 
     private void ComprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComprActionPerformed
 
-        
+
           if (Condiciones.isSelected()) {
                 String modelo = ModeloVentaText.getText();
                 String formaDePago = (String) FormasPago.getSelectedItem();
                 String precio = PrecioVentaText.getText();
+                double precio2 = Double.parseDouble(precio);
                 String fechaVenta = FechaVenta.getText();
-
-                JOptionPane.showMessageDialog(this, "Compra confirmada:\n" +
+                String correo = ConfCorreo.getText();
+                
+                if(correoExiste(correo))
+                {
+                        JOptionPane.showMessageDialog(this, "Compra confirmada:\n" +
                         modelo + "\n" +
                         "Forma de Pago: " + formaDePago + "\n" +
                         precio + "\n" +
                         fechaVenta);
-        ListaV ventana = new ListaV();
-        ventana.setVisible(true);
-        this.setVisible(false);
+                
+                VentaGuardar Guardar = new VentaGuardar();
+                Guardar.insertarVenta(obtenerIdVehiculoPorModelo(modelo), obtenerIdUsuarioPorCorreo(correo) , fechaVenta, precio2, formaDePago);          
+                ListaV ventana = new ListaV();
+                ventana.setVisible(true);
+                this.setVisible(false);
+                    
+                }
+                else{
+                     JOptionPane.showMessageDialog(this, "Debe Confirmar el Correo.");
+                }
+                
+
                 
             } else {
               JOptionPane.showMessageDialog(this, "Debe aceptar los términos y condiciones para continuar.");
-          }
-                
-
-
-
+          }               
         // TODO add your handling code here:
     }//GEN-LAST:event_ComprActionPerformed
 
@@ -197,6 +217,7 @@ public class RegistrarVenta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Compr;
     private javax.swing.JCheckBox Condiciones;
+    private javax.swing.JTextField ConfCorreo;
     private javax.swing.JLabel FechaVenta;
     private javax.swing.JComboBox<String> FormasPago;
     private javax.swing.JLabel ModeloVentaText;
@@ -209,6 +230,7 @@ public class RegistrarVenta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

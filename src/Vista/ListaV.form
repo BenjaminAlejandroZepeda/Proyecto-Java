@@ -400,8 +400,14 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton8">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Ver"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="240" y="340" width="-1" height="-1"/>
@@ -433,7 +439,7 @@
         <Component class="javax.swing.JLabel" name="jLabel15">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/diseno-fondo-abstracto-hd-color-verde-oliva_851755-74064.png"/>
+              <Image iconType="3" name="/Imagenes/Autos/gta-mag-overflod-entity-xxr-gtao-762500 (1).jpg"/>
             </Property>
           </Properties>
           <Constraints>
@@ -488,7 +494,7 @@
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/diseno-fondo-abstracto-hd-color-verde-oliva_851755-74064.png"/>
+              <Image iconType="3" name="/Imagenes/Autos/gta-mag-X80Proto-934566 (1).jpg"/>
             </Property>
           </Properties>
           <Constraints>

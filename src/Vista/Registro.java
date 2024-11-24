@@ -71,6 +71,12 @@ public class Registro extends javax.swing.JFrame {
         jLabel6.setText("Contraseña:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, -1, -1));
         jPanel1.add(NombreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 140, -1));
+
+        CorreoText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CorreoTextActionPerformed(evt);
+            }
+        });
         jPanel1.add(CorreoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 140, -1));
 
         ApellidoText.addActionListener(new java.awt.event.ActionListener() {
@@ -181,6 +187,10 @@ public class Registro extends javax.swing.JFrame {
     
        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void CorreoTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CorreoTextActionPerformed
 
     /**
      * @param args the command line arguments

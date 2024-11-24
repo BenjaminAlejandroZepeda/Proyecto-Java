@@ -74,6 +74,12 @@ public class Ingreso extends javax.swing.JFrame {
         vrtevr.setText("Correo:");
         jPanel1.add(vrtevr, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 50, -1));
         jPanel1.add(PassText, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 150, -1));
+
+        Correo2Text.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Correo2TextActionPerformed(evt);
+            }
+        });
         jPanel1.add(Correo2Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 150, -1));
 
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
@@ -141,6 +147,10 @@ public class Ingreso extends javax.swing.JFrame {
     private void BorrarCeuintaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarCeuintaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BorrarCeuintaActionPerformed
+
+    private void Correo2TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Correo2TextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Correo2TextActionPerformed
 
     /**
      * @param args the command line arguments
