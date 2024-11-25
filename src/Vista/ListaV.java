@@ -357,6 +357,7 @@ private void mostrarDatosVehiculo(int idVehiculo) {
             {
                 RegistrarVenta ventana = new RegistrarVenta();     
                 ventana.dato(ModeloText.getText(), PrecioText.getText());
+                ventana.Cosa(Correo3.getText());
                 ventana.setVisible(true);
                 this.setVisible(false); 
             }

@@ -17,6 +17,14 @@ import javax.swing.JOptionPane;
 public class RegistrarVenta extends javax.swing.JFrame {
    String dato;
    String precio;
+   
+   
+  private String Cosa;
+    
+ public void Cosa(String Cosa){
+        this.Cosa = Cosa;
+        Correo4.setText(Cosa);
+    }
 
     public RegistrarVenta() {
         setTitle("MotorSports");
@@ -56,7 +64,7 @@ public class RegistrarVenta extends javax.swing.JFrame {
         Condiciones = new javax.swing.JCheckBox();
         ModeloVentaText = new javax.swing.JLabel();
         FechaVenta = new javax.swing.JLabel();
-        ConfCorreo = new javax.swing.JTextField();
+        Correo4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -122,7 +130,10 @@ public class RegistrarVenta extends javax.swing.JFrame {
         FechaVenta.setForeground(new java.awt.Color(0, 0, 0));
         FechaVenta.setText("--------");
         jPanel1.add(FechaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, -1, -1));
-        jPanel1.add(ConfCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 130, -1));
+
+        Correo4.setForeground(new java.awt.Color(0, 0, 0));
+        Correo4.setText("---------------");
+        jPanel1.add(Correo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Correo:");
@@ -167,7 +178,7 @@ public class RegistrarVenta extends javax.swing.JFrame {
                 String precio = PrecioVentaText.getText();
                 double precio2 = Double.parseDouble(precio);
                 String fechaVenta = FechaVenta.getText();
-                String correo = ConfCorreo.getText();
+                String correo = Correo4.getText();
                 
                 if(correoExiste(correo))
                 {
@@ -180,6 +191,7 @@ public class RegistrarVenta extends javax.swing.JFrame {
                 VentaGuardar Guardar = new VentaGuardar();
                 Guardar.insertarVenta(obtenerIdVehiculoPorModelo(modelo), obtenerIdUsuarioPorCorreo(correo) , fechaVenta, precio2, formaDePago);          
                 ListaV ventana = new ListaV();
+                ventana.dato(Correo4.getText());
                 ventana.setVisible(true);
                 this.setVisible(false);
                     
@@ -197,6 +209,7 @@ public class RegistrarVenta extends javax.swing.JFrame {
 
         ListaV ventana = new ListaV();
         ventana.setVisible(true);
+        ventana.dato(Correo4.getText());
         this.setVisible(false);
 
         // TODO add your handling code here:
@@ -221,7 +234,7 @@ public class RegistrarVenta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Compr;
     private javax.swing.JCheckBox Condiciones;
-    private javax.swing.JTextField ConfCorreo;
+    private javax.swing.JLabel Correo4;
     private javax.swing.JLabel FechaVenta;
     private javax.swing.JComboBox<String> FormasPago;
     private javax.swing.JLabel ModeloVentaText;

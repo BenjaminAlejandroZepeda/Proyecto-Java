@@ -35,7 +35,6 @@ public class Ingreso extends javax.swing.JFrame {
         vrrvrv = new javax.swing.JLabel();
         BorrarCeuinta = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         vrtevr = new javax.swing.JLabel();
         PassText = new javax.swing.JPasswordField();
         Correo2Text = new javax.swing.JTextField();
@@ -60,7 +59,7 @@ public class Ingreso extends javax.swing.JFrame {
                 BorrarCeuintaActionPerformed(evt);
             }
         });
-        jPanel1.add(BorrarCeuinta, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 160, -1));
+        jPanel1.add(BorrarCeuinta, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 160, -1));
 
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Volver");
@@ -70,15 +69,6 @@ public class Ingreso extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Cambiar Contraseña");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 160, -1));
 
         vrtevr.setForeground(new java.awt.Color(255, 255, 255));
         vrtevr.setText("Correo:");
@@ -159,15 +149,6 @@ public class Ingreso extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Correo2TextActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        CambiarCont ventana = new CambiarCont();
-        ventana.setVisible(true);
-        this.setVisible(false);
-
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -179,7 +160,6 @@ public class Ingreso extends javax.swing.JFrame {
     private javax.swing.JPasswordField PassText;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
