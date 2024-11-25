@@ -108,6 +108,11 @@ public class RegistrarVenta extends javax.swing.JFrame {
 
         Condiciones.setForeground(new java.awt.Color(0, 0, 0));
         Condiciones.setText("Terminos y Condiciones");
+        Condiciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CondicionesActionPerformed(evt);
+            }
+        });
         jPanel1.add(Condiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 180, -1));
 
         ModeloVentaText.setForeground(new java.awt.Color(0, 0, 0));
@@ -156,8 +161,6 @@ public class RegistrarVenta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ComprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComprActionPerformed
-
-
           if (Condiciones.isSelected()) {
                 String modelo = ModeloVentaText.getText();
                 String formaDePago = (String) FormasPago.getSelectedItem();
@@ -183,10 +186,7 @@ public class RegistrarVenta extends javax.swing.JFrame {
                 }
                 else{
                      JOptionPane.showMessageDialog(this, "Debe Confirmar el Correo.");
-                }
-                
-
-                
+                }  
             } else {
               JOptionPane.showMessageDialog(this, "Debe aceptar los términos y condiciones para continuar.");
           }               
@@ -208,6 +208,10 @@ public class RegistrarVenta extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_FormasPagoActionPerformed
+
+    private void CondicionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CondicionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CondicionesActionPerformed
 
     /**
      * @param args the command line arguments

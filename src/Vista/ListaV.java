@@ -6,6 +6,7 @@ package Vista;
 
 import Controlador.JpanelImage;
 import Controlador.VehiculoDatos;
+import Controlador.VentaConsultar;
 import Modelo.Vehiculo;
 import java.awt.Label;
 import javax.swing.JOptionPane;
@@ -17,7 +18,18 @@ import javax.swing.JOptionPane;
 public class ListaV extends javax.swing.JFrame {
 
  String datoX = "Disponible";
+    private String Cosa, dato;
     
+ public void Cosa(String Cosa){
+        this.Cosa = Cosa;
+        Correo3.setText(Cosa);
+    }
+ 
+public void dato(String nuevoDato) {
+        dato = nuevoDato;
+        Correo3.setText(nuevoDato);
+    }
+ 
 private void mostrarDatosVehiculo(int idVehiculo) {
     Vehiculo vehiculo = VehiculoDatos.obtenerVehiculoPorId(idVehiculo);
     
@@ -68,6 +80,7 @@ private void mostrarDatosVehiculo(int idVehiculo) {
         jButton11 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         CapacidadText = new javax.swing.JLabel();
+        Correo3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -163,6 +176,11 @@ private void mostrarDatosVehiculo(int idVehiculo) {
 
         jButton11.setForeground(new java.awt.Color(0, 0, 0));
         jButton11.setText("Ver Compras");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, -1, -1));
 
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
@@ -172,6 +190,9 @@ private void mostrarDatosVehiculo(int idVehiculo) {
         CapacidadText.setForeground(new java.awt.Color(0, 0, 0));
         CapacidadText.setText("----------");
         jPanel1.add(CapacidadText, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, -1, -1));
+
+        Correo3.setText("-------");
+        jPanel1.add(Correo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
 
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Estado:");
@@ -350,16 +371,30 @@ private void mostrarDatosVehiculo(int idVehiculo) {
         Pantalla.removeAll();  
         JpanelImage miImagen = new JpanelImage(Pantalla, "/Imagenes/gta-mag-overflod-entity-xxr-gtao-762500.jpg");
         Pantalla.add(miImagen).repaint();
-
         mostrarDatosVehiculo(4);   
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+
+        ListaCompra ventana = new ListaCompra();
+        VentaConsultar vent = new VentaConsultar();
+        
+        ventana.dato(Correo3.getText());
+        
+        ventana.setLista(vent.obtenerVentasPorCorreo(Correo3.getText()));
+        ventana.setVisible(true);
+        this.setVisible(false);
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CapacidadText;
+    private javax.swing.JLabel Correo3;
     private javax.swing.JLabel EstadoText;
     private javax.swing.JLabel KmText;
     private javax.swing.JLabel MarcaText;

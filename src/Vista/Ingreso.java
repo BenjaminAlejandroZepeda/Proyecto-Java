@@ -35,6 +35,7 @@ public class Ingreso extends javax.swing.JFrame {
         vrrvrv = new javax.swing.JLabel();
         BorrarCeuinta = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         vrtevr = new javax.swing.JLabel();
         PassText = new javax.swing.JPasswordField();
         Correo2Text = new javax.swing.JTextField();
@@ -52,23 +53,32 @@ public class Ingreso extends javax.swing.JFrame {
         vrrvrv.setText("Contraseña:");
         jPanel1.add(vrrvrv, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, -1, -1));
 
-        BorrarCeuinta.setForeground(new java.awt.Color(255, 255, 255));
+        BorrarCeuinta.setForeground(new java.awt.Color(0, 0, 0));
         BorrarCeuinta.setText("Eliminar Cuenta");
         BorrarCeuinta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BorrarCeuintaActionPerformed(evt);
             }
         });
-        jPanel1.add(BorrarCeuinta, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, -1, -1));
+        jPanel1.add(BorrarCeuinta, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 160, -1));
 
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Volver");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
+        jButton3.setText("Cambiar Contraseña");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 160, -1));
 
         vrtevr.setForeground(new java.awt.Color(255, 255, 255));
         vrtevr.setText("Correo:");
@@ -98,7 +108,7 @@ public class Ingreso extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,38 +129,44 @@ public class Ingreso extends javax.swing.JFrame {
     String correo = Correo2Text.getText();
     String contrasenia = PassText.getText();
     
-    // Validación de campos vacíos
+
     if (correo.isEmpty() || contrasenia.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Por favor, ingrese el correo y la contraseña.");
         return;
     }
-
-    // Validación de formato del correo
     if (!correo.contains("@")) {
         JOptionPane.showMessageDialog(this, "El correo electrónico debe contener '@'.");
         return;
     }
-
-    // Autenticación del usuario
     if (VerificarUsuario.autenticarUsuario(correo, contrasenia)) {
         JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso.");
         ListaV ventana = new ListaV();
+        ventana.Cosa(Correo2Text.getText());
         ventana.setVisible(true);
-        this.setVisible(false);
-            
-        // Lógica para continuar a la siguiente ventana o sección de la aplicación
+        this.setVisible(false);    
     } else {
         JOptionPane.showMessageDialog(this, "Correo o contraseña incorrectos. Intente nuevamente.");
     } 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void BorrarCeuintaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarCeuintaActionPerformed
+
+
         // TODO add your handling code here:
     }//GEN-LAST:event_BorrarCeuintaActionPerformed
 
     private void Correo2TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Correo2TextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Correo2TextActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        CambiarCont ventana = new CambiarCont();
+        ventana.setVisible(true);
+        this.setVisible(false);
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,6 +179,7 @@ public class Ingreso extends javax.swing.JFrame {
     private javax.swing.JPasswordField PassText;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
