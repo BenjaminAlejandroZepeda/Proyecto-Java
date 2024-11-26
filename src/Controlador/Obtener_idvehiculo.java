@@ -12,6 +12,8 @@ import java.sql.SQLException;
  *
  * @author benja
  */
+
+// Recibe el modelo del vehiculo y busca en la tabla que id tiene
 public class Obtener_idvehiculo {
     private static final String url = "jdbc:mysql://localhost:3306/motorsportsdata";
     private static final String user = "root";

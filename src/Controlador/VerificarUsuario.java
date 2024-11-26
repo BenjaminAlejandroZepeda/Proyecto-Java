@@ -2,8 +2,8 @@
 package Controlador;
 
 /**
- *
- * @author benja
+ * @author Benjamin
+ * Version 26-11-2024
  */
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+// Verifica que existe un Usuario para iniciar Sesion
 public class VerificarUsuario {
     private static final String url = "jdbc:mysql://localhost:3306/motorsportsdata";
     private static final String user = "root"; 

@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Modelo;
 import java.time.LocalDate;
 /**
- *
- * @author benja
+ * @author Benjamin
+ * Version 26-11-2024
  */
 public class Venta {
     private Usuario comprador;
@@ -64,9 +61,5 @@ public class Venta {
 
     public void setFormaPago(String formaPago) {
         this.formaPago = formaPago;
-    }
-    
-    
-    
-    
+    } 
 }

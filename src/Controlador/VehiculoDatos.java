@@ -21,13 +21,14 @@ public class VehiculoDatos {
     private static final String password = "pandaazul"; 
 
     public static Vehiculo obtenerVehiculoPorId(int idVehiculo) {
+        
         String query = "SELECT * FROM Vehiculo WHERE id_vehiculo = ?";
         Vehiculo vehiculo = null;
-
+        
         try (Connection connection = DriverManager.getConnection(url, user, password);
              PreparedStatement statement = connection.prepareStatement(query)) {
              
-            statement.setInt(1, idVehiculo); // Establecer el parámetro
+            statement.setInt(1, idVehiculo); 
             ResultSet rs = statement.executeQuery();
 
             if (rs.next()) {
@@ -37,12 +38,11 @@ public class VehiculoDatos {
                 double precio = rs.getDouble("precio");
                 int kilometrosHora = rs.getInt("kilometros_hora");
                           
-                vehiculo = new Vehiculo(marca, modelo, capacidad, precio, kilometrosHora); // Crear el objeto Vehiculo
+                vehiculo = new Vehiculo(marca, modelo, capacidad, precio, kilometrosHora); 
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return vehiculo;
     }
     

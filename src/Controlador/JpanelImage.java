@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Controlador;
 
 import java.awt.Graphics;
@@ -10,9 +7,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- *
- * @author benja
+ * @author Benjamin
+ * Version 26-11-2024
  */
+
+// Adapta el tamaño de las imagenes a un objeto normalmente se usa en JPanel
 public class JpanelImage extends JLabel{
     
     private int x,y;

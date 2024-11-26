@@ -1,9 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Controlador;
-import java.awt.List;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -15,6 +11,9 @@ import java.util.Date;
  *
  * @author benja
  */
+
+
+// Busca por un Correo todas las compras y retorna una lista de estas
 public class VentaConsultar {
     private static final String url = "jdbc:mysql://localhost:3306/motorsportsdata";
     private static final String user = "root";
@@ -44,9 +43,7 @@ public class VentaConsultar {
                 //ventas.add("Vehículo: " + marca + " " + modelo + ", Fecha: " + fechaVenta + 
                 //          ", Precio: " + precioVenta + ", Forma de Pago: " + formaPago);
                 
-                ventas.add(marca + "         " + modelo + "          " + fechaVenta + "           " + precioVenta + "         " + formaPago);
-                
-                
+                ventas.add(marca + "         " + modelo + "          " + fechaVenta + "           " + precioVenta + "         " + formaPago);    
             }
 
         } catch (SQLException e) {

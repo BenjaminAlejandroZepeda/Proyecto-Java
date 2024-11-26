@@ -1,16 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Controlador;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 /**
- *
- * @author benja
+ * @author Benjamin
+ * Version 26-11-2024
  */
+
+// Registra los datos de la venta
 public class VentaGuardar {
     private static final String url = "jdbc:mysql://localhost:3306/motorsportsdata";
     private static final String user = "root";

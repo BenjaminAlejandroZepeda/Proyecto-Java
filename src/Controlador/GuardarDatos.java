@@ -5,14 +5,15 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 /**
- *
- * @author benja
+ * @author Benjamin
+ * Version 26-11-2024
  */
 public class GuardarDatos {
     private static final String url = "jdbc:mysql://localhost:3306/motorsportsdata";
     private static final String user = "root"; 
     private static final String password = "pandaazul"; 
     
+    //Registra los datos de usuario
 public static void guardarUsuario(String nombre, String apellido, String telefono, String correo, String contrasenia) 
 { String query = "INSERT INTO Usuario (nombre, apellido, telefono, correo, contrasenia) VALUES (?, ?, ?, ?, ?)"; 
 

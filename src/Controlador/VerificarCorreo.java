@@ -7,9 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- *
- * @author benja
+ * @author Benjamin
+ * Version 26-11-2024
  */
+
+// Recibe un correo y verifica que exista en la base de datos
 public class VerificarCorreo {
     private static final String url = "jdbc:mysql://localhost:3306/motorsportsdata";
     private static final String user = "root"; 

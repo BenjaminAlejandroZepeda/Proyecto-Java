@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Modelo;
 
 /**
- *
- * @author benja
+ * @author Benjamin
+ * Version 26-11-2024
  */
 public class Vehiculo {
     private String marca;
@@ -65,8 +62,5 @@ public class Vehiculo {
 
     public void setKilometrosHora(int kilometrosHora) {
         this.kilometrosHora = kilometrosHora;
-    }
-
- 
-      
+    }   
 }

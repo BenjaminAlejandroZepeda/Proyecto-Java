@@ -6,8 +6,8 @@ import Controlador.VerificarCorreo;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author benja
+ * @author Benjamin
+ * Version 26-11-2024
  */
 public class Registro extends javax.swing.JFrame {
 
@@ -131,8 +131,6 @@ public class Registro extends javax.swing.JFrame {
         VentanaPrincipal ventana = new VentanaPrincipal();
         ventana.setVisible(true);
         this.setVisible(false);
-
-        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -176,7 +174,9 @@ public class Registro extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "El correo ya está registrado. Por favor, use otro correo."); return; 
     }
     //Guardar los datos
+    
     GuardarDatos.guardarUsuario(nombre, apellido, telefono, correo, contrasenia); 
+    
     //vaciar las cajas
     NombreText.setText("");
     ApellidoText.setText("");
@@ -185,11 +185,14 @@ public class Registro extends javax.swing.JFrame {
     ContrText.setText("");
     JOptionPane.showMessageDialog(this, "Usuario registrado exitosamente.");
     
+        VentanaPrincipal ventana = new VentanaPrincipal();
+        ventana.setVisible(true);
+        this.setVisible(false);
        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void CorreoTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoTextActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_CorreoTextActionPerformed
 
     /**
